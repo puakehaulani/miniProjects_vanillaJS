@@ -1,28 +1,39 @@
-// select button elements
-// attach event listeners to listen for click
-// when click detected, change img src to another from the array
+// ajax call to get data from endpoint and store to array imagesList
 let imagesList = ["https://cdn.pixabay.com/photo/2017/07/25/01/22/cat-2536662_1280.jpg", "https://picsum.photos/700/500", "https://picsum.photos/700/500?grayscale"]
-var i = 0
-var imageSource = document.querySelector(".carousel-container")
-console.log(imageSource)
-function loadImage() {
+
+
+let imageSource = document.querySelector(".carousel-container")
+function loadImage(i) {
     imageSource.style.backgroundImage = `url(${imagesList[i]})`
 }
-loadImage()
+// select button elements
 
 let btns = document.querySelectorAll('.direction-btn')
 btns.forEach(function (btn) {
+    let i = 0
+    // attach event listeners to listen for click
     btn.addEventListener("click", function (e) {
+        console.log("i first", i)
         let direction = e.currentTarget.dataset.id
+        // when click detected, change img src to next or prev from the array
         if (direction === "forward") {
-            i++
-            loadImage()
-
+            if (i === imagesList.length - 1) {
+                console.log("too many i")
+                i = 0
+            }
+            else {
+                i++
+            }
         }
         else {
             i--
-            loadImage()
+            if (i < 0) {
+                i = imagesList.length - 1
+            }
         }
-        console.log("i", i)
+        loadImage(i)
+        console.log("new i", i)
     })
 })
+
+loadImage(0)
