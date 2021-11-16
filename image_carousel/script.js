@@ -13,12 +13,10 @@ btns.forEach(function (btn) {
     let i = 0
     // attach event listeners to listen for click
     btn.addEventListener("click", function (e) {
-        console.log("i first", i)
         let direction = e.currentTarget.dataset.id
         // when click detected, change img src to next or prev from the array
         if (direction === "forward") {
             if (i === imagesList.length - 1) {
-                console.log("too many i")
                 i = 0
             }
             else {
@@ -32,7 +30,6 @@ btns.forEach(function (btn) {
             }
         }
         loadImage(i)
-        console.log("new i", i)
     })
 })
 
