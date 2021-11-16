@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Calculator></title>
+</head>
+
+<body>
+    <h1>Mortgage Calculator</h1>
+    <div class="form-container">
+        <form>
+
+            <label for="principal">Principal loan amount</label><br />
+            <input type="text" id="principal" onchange="updateValue(this.id, this.value)" /><br />
+
+            <label for="rate">Interest rate</label><br />
+            <input type="text" id="rate-year" onchange="updateValue(this.id, this.value)" />%<br />
+
+            <label for="length">Length of loan</label><br />
+            <input type="text" id="length-year" onchange="updateValue(this.id, this.value)" /> Years<br /> <br />
+
+            <input type="button" value="Calculate" onclick="return calculate()" />
+        </form>
+    </div>
+    <div class="results-container">
+        <p>Your monthly mortgage payment will be $<span id="calculatedResults">___</span></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+body {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+.center {
+    display: flex-row;
+    justify-content: center;
+    text-align: center;
+    align-items: center
+}
+
+
+.modal-overlay {
+    background-color: gray;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -10;
+}
+
+.modal-container {
+    z-index: 10;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+    display: flex-row;
+
+
+}
+
+.openModal {
+    visibility: visible;
+    z-index:10;
+}
