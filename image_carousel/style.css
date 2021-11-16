@@ -1,0 +1,30 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.carousel-container {
+    display:flex;
+    align-items: center;
+    height:500px;
+    width:700px;
+    background-color: gray;
+    background-image: ""
+}
+
+.btn-container {
+    position: fixed;
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+}
+
+.direction-btn {
+    color: black;
+    margin-inline: 20px;
+    background-color: transparent;
+    border-style: none;
+    filter: drop-shadow(2px 2px 4px darkgrey    )
+}
